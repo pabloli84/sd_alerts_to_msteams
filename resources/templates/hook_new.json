@@ -1,0 +1,47 @@
+{
+    "incident": {
+      "incident_id": "0.lkkpyne8uznk",
+      "resource_id": "",
+      "resource_name": "toryburch-nextgen aem-qa",
+      "resource": {
+        "type": "gce_instance",
+        "labels": {
+          "instance_id": "7554898830801610441",
+          "zone": "us-central1-f"
+        }
+      },
+      "resource_display_name": "aem-qa",
+      "resource_type_display_name": "GCE VM Instance",
+      "metric": {
+        "type": "agent.googleapis.com/cpu/load_1m",
+        "displayName": "CPU load (1m)"
+      },
+      "started_at": 1584099677,
+      "policy_name": "Test MS Teams notifications",
+      "condition_name": "CPU load (1m) for toryburch-nextgen",
+      "condition": {
+        "name": "projects/toryburch-nextgen/alertPolicies/12964177878575542039/conditions/12964177878575539050",
+        "displayName": "CPU load (1m) for toryburch-nextgen",
+        "conditionThreshold": {
+          "filter": "metric.type=\"agent.googleapis.com/cpu/load_1m\" resource.type=\"gce_instance\" resource.label.\"project_id\"=\"toryburch-nextgen\" metadata.user_labels.\"aem-qa-default\"=\"\"",
+          "aggregations": [
+            {
+              "alignmentPeriod": "60s",
+              "perSeriesAligner": "ALIGN_MEAN"
+            }
+          ],
+          "comparison": "COMPARISON_GT",
+          "thresholdValue": 0.4,
+          "duration": "60s",
+          "trigger": {
+            "count": 1
+          }
+        }
+      },
+      "url": "https://console.cloud.google.com/monitoring/alerting/incidents/0.lkkpyne8uznk?project=toryburch-nextgen",
+      "state": "closed",
+      "ended_at": 1584110920,
+      "summary": "CPU load (1m) for toryburch-nextgen aem-qa returned to normal with a value of 0.150."
+    },
+    "version": "1.2"
+  }

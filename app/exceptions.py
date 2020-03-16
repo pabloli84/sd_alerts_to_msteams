@@ -1,0 +1,2 @@
+class MissingTeamsWebhookConnector(Exception):
+    pass

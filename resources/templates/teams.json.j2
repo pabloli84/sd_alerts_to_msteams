@@ -1,0 +1,32 @@
+{%- set
+  theme_colors = {
+    'closed' : '2DC72D',
+    'open' : '8C1A1A',
+    'unknown' : 'CCCCCC'
+  }
+-%}
+
+{
+    "@type": "MessageCard",
+    "@context": "http://schema.org/extensions",
+    "themeColor": "{% if state=='open' %} {{ theme_colors.open }} {% else %} {{ theme_colors.closed }} {% endif %}",
+    "summary": "{% if state=='closed' %}(Stopped) {% endif %}{{ msg_text.summary }}",
+    "title": "Google Cloud Monitoring Alert {% if state=='closed' %}(Stopped) {% elif state=='open' %} (Started) {% endif %}",
+    "sections": [{
+        "activityTitle": "{{ msg_text.condition_name }}",
+        "facts": [{% if msg_text.incident %}{
+            "name": "Incident",
+            "value": "{{ [msg_text.incident](msg_text.incident_url) }}"
+        },{% endif %}{% if msg_text.policy_name %}{
+            "name": "Policy",
+            "value": "{{ msg_text.policy_name }}"
+        },{% endif %}{% if msg_text.description %}{
+            "name": "Description",
+            "value": "{{ msg_text.description }}"
+        },{% endif %}{
+            "name": "State",
+            "value": "{{ msg_text.state }}"
+        },
+          "markdown": true
+    }]
+}
