@@ -2,6 +2,7 @@
 
 This app allows to redirect messages from Google Monitoring Alerts to MS Teams channel via channel connector webhok.
 
-You need specife following variables
+You need specify following variables
 
-|MS_TEAMS_WEBHOOK|MS Teams connector webhook|
+|| Variable name || Description ||
+| MS_TEAMS_WEBHOOK | MS Teams connector webhook |
