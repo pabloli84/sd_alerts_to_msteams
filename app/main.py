@@ -13,7 +13,7 @@ if ms_teams_webhook == "none":
 
 
 @app.route('/', methods=['POST'])
-def get_webhook():
+def send_to_teams(request):
     data = json.loads(request.data)
     teams_card = convert_sd_to_ms(data)
     print(data)
