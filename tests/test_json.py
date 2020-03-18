@@ -19,6 +19,8 @@ class TestJSON(unittest.TestCase):
     def test_cf_with_valid_sd_json(self):
         with open("tests/sd_valid_incident_closed.json") as json_valid:
             incoming_json = json.load(json_valid)
+            key = "94407572d3907543ba4a614b5e723ac2"
+            data = {'key': key}
             
-            req = Mock(get_json=Mock(return_value=incoming_json), args=incoming_json)
+            req = Mock(get_json=Mock(return_value=incoming_json), args=data)
             self.assertEqual(main.send_to_teams(req), "OK")
