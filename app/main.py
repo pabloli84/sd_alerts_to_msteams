@@ -12,7 +12,6 @@ if ms_teams_webhook == "none":
     raise MissingTeamsWebhookConnector('Missing MS_TEAMS_WEBHOOK variable set.')
 
 
-# @app.route('/', methods=['POST'])
 def send_to_teams(request):
     data = request.get_json(silent=True)
     teams_card = convert_sd_to_ms(data)
