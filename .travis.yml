@@ -1,9 +1,8 @@
 language: python
 python:
   - "3.7"
-env:
-  - MS_TEAMS_CONNECTOR = "dummy"
 install:
   - pip install -r app/requirements.txt
 script:
+  - export MS_TEAMS_CONNECTOR="dummy"
   - python -m unittest discover tests/
