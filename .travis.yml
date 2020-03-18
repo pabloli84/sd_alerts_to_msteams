@@ -4,6 +4,6 @@ python:
 env:
   - MS_TEAMS_CONNECTOR = "dummy"
 install:
-  - pip install -r requirements.txt
+  - pip install -r app/requirements.txt
 script:
   - python -m unittest discover tests/
