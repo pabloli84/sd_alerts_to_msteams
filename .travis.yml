@@ -4,5 +4,5 @@ python:
 install:
   - pip install -r app/requirements.txt
 script:
-  - export MS_TEAMS_CONNECTOR="dummy"
+  - export MS_TEAMS_WEBHOOK="dummy"
   - python -m unittest discover tests/
