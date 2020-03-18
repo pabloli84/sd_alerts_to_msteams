@@ -3,8 +3,8 @@ import requests
 import json
 import os
 
-from convert_alert import convert_sd_to_ms
-from exceptions import MissingTeamsWebhookConnector
+from .convert_alert import convert_sd_to_ms
+from .exceptions import MissingTeamsWebhookConnector
 
 app = Flask(__name__)
 ms_teams_webhook = os.getenv("MS_TEAMS_WEBHOOK", "none")

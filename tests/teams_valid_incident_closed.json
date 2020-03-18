@@ -1,0 +1,31 @@
+{
+    "@type": "MessageCard",
+    "@context": "http://schema.org/extensions",
+    "themeColor": "2DC72D",
+    "summary": "CPU load (1m) for toryburch-nextgen",
+    "sections": [
+      {
+        "activityTitle": "CPU load (1m) for toryburch-nextgen",
+        "activitySubtitle": "[Test MS Teams notifications](https://console.cloud.google.com/monitoring/alerting/incidents/0.lkkpyne8uznk?project=toryburch-nextgen)",
+        "facts": [
+          {
+            "name": "Summary",
+            "value": "CPU load (1m) for toryburch-nextgen aem-qa returned to normal with a value of 0.150."
+          },
+          {
+            "name": "Started at",
+            "value": "2020-03-13 14:41:17"
+          },
+          {
+            "name": "Stopped at",
+            "value": "2020-03-13 17:48:40"
+          },
+          {
+            "name": "Status",
+            "value": "closed"
+          }
+        ],
+        "markdown": "true"
+      }
+    ]
+  }
