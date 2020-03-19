@@ -1,10 +1,9 @@
-from flask import Flask, request
+from flask import Flask
 import requests
-import json
 import os
 
-from app.convert_alert import convert_sd_to_ms
-from app.exceptions import MissingTeamsWebhookConnector, AuthKeyNotValid
+from convert_alert import convert_sd_to_ms
+from exceptions import MissingTeamsWebhookConnector, AuthKeyNotValid
 
 app = Flask(__name__)
 ms_teams_webhook = os.getenv("MS_TEAMS_WEBHOOK", "none")
