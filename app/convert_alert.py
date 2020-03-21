@@ -6,11 +6,12 @@ alert_colors = {
     'closed': '2DC72D'
 }
 
+
 def convert_sd_to_ms(data):
 
-    start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(data['incident']['started_at'])) \
+    start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(data['incident']['started_at'])) \
         if data['incident']['started_at'] else ""
-    end_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(data['incident']['ended_at'])) \
+    end_time = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(data['incident']['ended_at'])) \
         if data['incident']['ended_at'] else ""
 
     teams_message = {
