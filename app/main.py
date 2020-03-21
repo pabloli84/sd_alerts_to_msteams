@@ -2,14 +2,15 @@ from flask import Flask
 import requests
 import os
 
-from convert_alert import convert_sd_to_ms
-from exceptions import MissingTeamsWebhookConnector, AuthKeyNotValid
+from app.convert_alert import convert_sd_to_ms
+from app.exceptions import MissingTeamsWebhookConnector, AuthKeyNotValid
 
 app = Flask(__name__)
-ms_teams_webhook = os.getenv("MS_TEAMS_WEBHOOK", "none")
 
 
 def send_to_teams(request):
+    ms_teams_webhook = os.getenv("MS_TEAMS_WEBHOOK", "none")
+
     if ms_teams_webhook == "none":
         raise MissingTeamsWebhookConnector('Missing MS_TEAMS_WEBHOOK variable set.')
 

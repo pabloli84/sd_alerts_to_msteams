@@ -1,6 +1,6 @@
 # Standard library imports...
 from http.server import BaseHTTPRequestHandler, HTTPServer
-import socket
+
 from threading import Thread
 import os
 # Third-party imports...
