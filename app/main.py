@@ -18,13 +18,13 @@ def send_to_teams(request):
     data = request.get_json(silent=True)
 
     teams_card = convert_sd_to_ms(data)
-    print(data)
 
-    print(teams_card)
+    app.logger.info("Got message from SD: %s", data)
+    app.logger.info("Sending message to Teams: %s", teams_card)
 
     r = requests.post(ms_teams_webhook, json=teams_card)
 
-    print(f'Hook return code: {r.status_code}')
+    app.logger.info('Hook return code: %s', r.status_code)
 
     return "OK"
 
