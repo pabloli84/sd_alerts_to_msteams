@@ -1,9 +1,10 @@
-from flask import Flask
 import requests
 import os
 
+from flask import Flask
+
 from app.convert_alert import convert_sd_to_ms
-from app.exceptions import MissingTeamsWebhookConnector, AuthKeyNotValid
+from app.exceptions import MissingTeamsWebhookConnector
 
 app = Flask(__name__)
 
