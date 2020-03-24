@@ -19,7 +19,7 @@ def convert_sd_to_ms(data):
     teams_message = {
         "@type": "MessageCard",
         "@context": "http://schema.org/extensions",
-        "themeColor": f"{alert_colors['open'] if inc_data.get('state') == 'open'else alert_colors['closed']}",
+        "themeColor": alert_colors['open'] if inc_data.get('state') == 'open'else alert_colors['closed'],
         "summary": inc_data.get("condition_name"),
         "sections": [{
             "activityTitle": inc_data.get("condition_name"),
