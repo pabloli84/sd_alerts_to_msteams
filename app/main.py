@@ -2,9 +2,9 @@ import requests
 
 from flask import Flask
 
-from app.convert_alert import convert_sd_to_ms
-from app.config import *
-from app.exceptions import MissingTeamsWebhookConnector
+from convert_alert import convert_sd_to_ms
+from config import *
+from exceptions import MissingTeamsWebhookConnector
 
 SD2TEAMS_MODE = os.getenv("SD2TEAMS_MODE", "Dev")
 
