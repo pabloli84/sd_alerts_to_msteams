@@ -14,7 +14,6 @@ from app.convert_alert import convert_sd_to_ms
 from app import main
 
 http_port = 6000
-os.environ['MS_TEAMS_WEBHOOK'] = f'http://localhost:{http_port}/'
 
 
 def run_mock_server():
