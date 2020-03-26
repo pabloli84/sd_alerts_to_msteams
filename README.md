@@ -8,3 +8,4 @@ You need specify following variables
 | Variable name | Description |
 |:--------------|-------------|
 | MS_TEAMS_WEBHOOK | MS Teams connector webhook |
+| SD2TEAMS_MODE | Operational mode, default Dev, for production use Prod |
