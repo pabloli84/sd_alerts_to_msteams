@@ -11,9 +11,9 @@ SD2TEAMS_MODE = os.getenv("SD2TEAMS_MODE", "Dev")
 
 app = Flask(__name__)
 if SD2TEAMS_MODE == "Prod":
-    app.config.from_object('config.ProdConfig')
+    app.config.from_object('app.config.ProdConfig')
 elif SD2TEAMS_MODE == "Test":
-    app.config.from_object('config.Config')
+    app.config.from_object('app.config.Config')
 
 teams_webhook = app.config['MS_TEAMS_WEBHOOK']
 if teams_webhook == "none":
