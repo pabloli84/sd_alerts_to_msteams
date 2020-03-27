@@ -9,7 +9,7 @@ steps:
           pip install -r requirements.txt && python -m unittest
     dir: 'app'
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['functions', 'deploy', 'sd_to_teams', 'trigger-http', '--runtime', 'python37', '--entry-point',
+    args: ['functions', 'deploy', 'sd_to_teams', '--trigger-http', '--runtime', 'python37', '--entry-point',
            'send_to_teams', '--allow-unauthenticated', '--memory', '128',
            '--set-env-vars', 'MS_TEAMS_WEBHOOK=$$MS_TEAMS_WEBHOOK,SD2TEAMS_MODE=Prod']
     dir: 'app'
