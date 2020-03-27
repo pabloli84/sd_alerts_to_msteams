@@ -1,7 +1,5 @@
 import os
 
-from app.exceptions import MissingTeamsWebhookConnector
-
 
 class Config(object):
     DEBUG = False

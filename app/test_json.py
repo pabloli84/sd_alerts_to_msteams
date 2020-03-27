@@ -10,8 +10,8 @@ import json
 import unittest
 from unittest.mock import Mock
 
-from app.convert_alert import convert_sd_to_ms
-from app import main
+from convert_alert import convert_sd_to_ms
+from main import send_to_teams
 
 http_port = 6000
 
@@ -29,8 +29,8 @@ def run_mock_server():
 class TestJSON(unittest.TestCase):
     
     def test_valid_input_sd_json(self):
-        with open("sd_valid_incident_closed.json") as json_valid, \
-                open('teams_valid_incident_closed.json') as json_teams:
+        with open("test_data/sd_valid_incident_closed.json") as json_valid, \
+                open('test_data/teams_valid_incident_closed.json') as json_teams:
             incoming_json = json.load(json_valid)
             teams_valid_json = json.load(json_teams)
             teams_json = convert_sd_to_ms(incoming_json)
@@ -38,13 +38,13 @@ class TestJSON(unittest.TestCase):
             self.assertEqual(teams_valid_json, teams_json)
 
     def test_cf_with_valid_sd_json(self):
-        with open("sd_valid_incident_closed.json") as json_valid:
+        with open("test_data/sd_valid_incident_closed.json") as json_valid:
             incoming_json = json.load(json_valid)
 
             run_mock_server()
 
             req = Mock(get_json=Mock(return_value=incoming_json))
-            self.assertEqual(main.send_to_teams(req), "OK")
+            self.assertEqual(send_to_teams(req), "OK")
 
 
 class MockServerRequestHandler(BaseHTTPRequestHandler):
