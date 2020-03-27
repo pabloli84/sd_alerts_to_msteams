@@ -1,6 +1,6 @@
 steps:
   - name: 'mirror.gcr.io/library/python'
-    args: ['python', 'unittest']
+    args: ['python', '-m', 'unittest']
     dir: 'app'
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['functions', 'deploy', 'sd_to_teams', 'trigger-http', '--runtime', 'python37', '--entry-point', \
