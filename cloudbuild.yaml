@@ -1,5 +1,5 @@
 steps:
-  - name: 'mirror.gcr.io/library/python37'
+  - name: 'mirror.gcr.io/library/python'
     args: ['python', 'unittest']
     dir: 'app'
   - name: 'gcr.io/cloud-builders/gcloud'
