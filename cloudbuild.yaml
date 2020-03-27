@@ -1,5 +1,9 @@
 steps:
   - name: 'mirror.gcr.io/library/python'
+    entrypoint: pip
+    args: ['install', '-r', 'requirements.txt']
+    dir: 'app'
+  - name: 'mirror.gcr.io/library/python'
     args: ['python', '-m', 'unittest']
     dir: 'app'
   - name: 'gcr.io/cloud-builders/gcloud'
