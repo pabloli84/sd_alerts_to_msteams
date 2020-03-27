@@ -14,3 +14,4 @@ secrets:
   - kmsKeyName: projects/toryburch-services-test/locations/us-central1/keyRings/sd2teams-secrets/cryptoKeys/sd2teams-secrets
     secretEnv:
       MS_TEAMS_WEBHOOK: CiQARxmVUgFKnJzsJbutDU4PX8GondEvB3+2HVu0Dq+co2ZsBnYS7AEAoFWrjHPJMHOWXNx2uDa8cSiUw+QgXdTvxNb09sq6zMEIAxBEW62WeS0M2BR3kxrf4uHeDka8S1AM7ljwvBU3cneYUYCwR8WvZWq1S3qTa8wvFBMR9dEdZ+xGm7KecFHyhmMW2ddn9RJ/AuazIDOfNunr+/RcFuylJ+8W1mj7pD/wDpDealGTgegPy2HXWmbUzihrLKCiqKaRZtZV7clY8DMlD7bBOaVJ3aBM5b+7pQ7pMKfcYSqEP4CzU2hC5Xz5pNyxx6qbU0jORoEIz0B+3+aqDrDlVWnrylkeHUm7PgyGZa4g/60OcyH/Ew==
+  
