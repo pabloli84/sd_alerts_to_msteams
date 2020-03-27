@@ -5,4 +5,4 @@ install:
   - pip install -r app/requirements.txt
 script:
   - export SD2TEAMS_MODE=Test
-  - python -m unittest
+  - cd app/ && python -m unittest
