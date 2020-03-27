@@ -9,23 +9,25 @@ alert_colors = {
 
 def convert_sd_to_ms(data):
 
-    start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(data['incident']['started_at'])) \
-        if data['incident']['started_at'] else ""
-    end_time = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(data['incident']['ended_at'])) \
-        if data['incident']['ended_at'] else ""
+    inc_data = data['incident']
+
+    start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(inc_data.get('started_at'))) \
+        if inc_data.get('started_at') else ""
+    end_time = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(inc_data.get('ended_at'))) \
+        if inc_data.get('ended_at') else ""
 
     teams_message = {
         "@type": "MessageCard",
         "@context": "http://schema.org/extensions",
-        "themeColor": f"{alert_colors['open'] if data['incident']['state'] == 'open'else alert_colors['closed']}",
-        "summary": data["incident"]["condition_name"],
+        "themeColor": alert_colors['open'] if inc_data.get('state') == 'open'else alert_colors['closed'],
+        "summary": inc_data.get("condition_name"),
         "sections": [{
-            "activityTitle": data["incident"]["condition_name"],
-            "activitySubtitle": f'[{data["incident"]["policy_name"]}]({data["incident"]["url"]})',
+            "activityTitle": inc_data.get("condition_name"),
+            "activitySubtitle": f'[{inc_data.get("policy_name")}]({inc_data.get("url")})',
             "facts": [
                 {
                     "name": "Summary",
-                    "value": data["incident"]["summary"]
+                    "value": inc_data.get("summary")
                 },
                 {
                     "name": "Started at",
@@ -38,7 +40,7 @@ def convert_sd_to_ms(data):
 
                 {
                     "name": "Status",
-                    "value": data["incident"]["state"]
+                    "value": inc_data.get("state")
                 }
             ],
             "markdown": "true"
