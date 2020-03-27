@@ -1,5 +1,7 @@
 steps:
   - name: 'mirror.gcr.io/library/python'
+    env:
+      - SD2TEAMS_MODE=Test
     entrypoint: 'bash'
     args:
       - '-c'
